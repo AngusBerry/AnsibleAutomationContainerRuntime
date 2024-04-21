@@ -1,0 +1,11 @@
+#version: '3'
+services:
+  ansible_runtime:
+    image: ansible_runtime:latest  # Name of the image you built
+    command: tail -f /dev/null  # Keeps the container running
+    #command: ["bash"]  # Starts a bash shell
+    build:
+      context: .
+      dockerfile: Dockerfile  # Path to your Dockerfile
+    volumes:
+      - ~/:/home  # Mounts the local directory 'local_data' into the container
