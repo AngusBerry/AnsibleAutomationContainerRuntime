@@ -10,4 +10,4 @@
 
 <u>Start the service as a container running in the background:</u>  
 ```docker-compose up -d```  
-...you can then connect to a command promot in the running container and disconnect, in the standard way you do this using Docker commands
+...you can then connect to a command prompt in the running container and disconnect, in the standard way you do this using Docker commands

@@ -2,15 +2,15 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 RUN yum update -y
 
-#install python3    
+#install python3
 RUN yum install -y python39
 
 #RUN yum install -y python3-pip
 RUN yum install -y openssh
 RUN yum install -y openssl-devel
-RUN yum install -y git 
+RUN yum install -y git
 RUN yum install -y gcc
-RUN yum install -y make 
+RUN yum install -y make
 
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -20,6 +20,9 @@ RUN pip3 install passlib
 RUN pip3 install dnspython
 #RUN pip3 install just
 RUN pip3 install paramiko
+RUN pip3 install ansible[azure]  --- Install ansible
+RUN ansible-galaxy collection install azure.azcollection  ---- Install Azure Collections
+RUN pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt ---- install dependence
 
 ENV PATH=$PATH:~/.local/bin
 
