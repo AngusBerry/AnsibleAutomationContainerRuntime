@@ -20,9 +20,9 @@ RUN pip3 install passlib
 RUN pip3 install dnspython
 #RUN pip3 install just
 RUN pip3 install paramiko
-RUN pip3 install ansible[azure]  --- Install ansible
-RUN ansible-galaxy collection install azure.azcollection  ---- Install Azure Collections
-RUN pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt ---- install dependence
+RUN pip3 install ansible[azure]
+RUN ansible-galaxy collection install azure.azcollection --force
+#RUN pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
 
 ENV PATH=$PATH:~/.local/bin
 
